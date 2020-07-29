@@ -1,4 +1,4 @@
-package com.mooreb.esi.falcon.util;
+package com.mooreb.util;
 
 import java.lang.invoke.MethodHandles;
 import java.util.List;
