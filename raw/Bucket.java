@@ -126,6 +126,14 @@ public class Bucket<T extends Comparable<T>> {
         return sb.toString();
     }
 
+    public T getLow() {
+        return low;
+    }
+
+    public T getHigh() {
+        return high;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

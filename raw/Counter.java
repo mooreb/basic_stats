@@ -40,6 +40,21 @@ public class Counter<T> {
         return Collections.unmodifiableList(retval);
     }
 
+    public long getCount(final T t) {
+        if(null == t) return numNullEntries;
+        final Long retval = internalMap.get(t);
+        if(null == retval) return 0L;
+        return retval;
+    }
+
+    public long getNumEntries() {
+        return numEntries;
+    }
+
+    public long getNumNullEntries() {
+        return numNullEntries;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Counter{");

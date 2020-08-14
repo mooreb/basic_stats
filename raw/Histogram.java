@@ -1,6 +1,7 @@
 package com.mooreb.util;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Histogram<T extends Comparable<T>> {
@@ -28,14 +29,26 @@ public class Histogram<T extends Comparable<T>> {
         }
     }
 
-    public List<Counted<Bucket<T>>> getBuckets() {
+    public List<Counted<Bucket<T>>> getBucketsByFrequency() {
         final List<Counted<Bucket<T>>> frequencyTable = bucketCounter.getFrequencyTable();
         return frequencyTable;
     }
 
     public Counted<Bucket<T>> getBiggestBucket() {
-        final List<Counted<Bucket<T>>> frequencyTable = getBuckets();
+        final List<Counted<Bucket<T>>> frequencyTable = getBucketsByFrequency();
         return frequencyTable.get(0);
+    }
+
+    public List<Counted<Bucket<T>>> getBucketsByNaturalOrdering() {
+        final List<Counted<Bucket<T>>> retval = new ArrayList<>();
+        final long numEntries = bucketCounter.getNumEntries();
+        final long numNullEntries = bucketCounter.getNumNullEntries();
+        for(final Bucket<T> bucket : buckets) {
+            final long count = bucketCounter.getCount(bucket);
+            final Counted<Bucket<T>> counted = new Counted<>(bucket, count, numEntries, numNullEntries);
+            retval.add(counted);
+        }
+        return Collections.unmodifiableList(retval);
     }
 
 }
