@@ -1,4 +1,4 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.counting;
 
 import java.util.Objects;
 

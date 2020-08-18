@@ -1,4 +1,4 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.counting;
 
 import java.lang.invoke.MethodHandles;
 import java.util.List;
@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 public class UniqueCategoryTermCounterTest {
     private final static Logger LOG = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());

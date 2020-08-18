@@ -1,4 +1,4 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.csv;
 
 import java.io.File;
 import java.io.FileReader;

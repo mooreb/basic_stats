@@ -1,5 +1,6 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.histogram;
 
+import com.mooreb.basic_stats.counting.Counted;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;

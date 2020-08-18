@@ -1,4 +1,4 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.util;
 
 public class StringUtils {
     public static boolean isEmpty(final String s) {

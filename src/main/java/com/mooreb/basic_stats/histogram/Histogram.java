@@ -1,4 +1,7 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.histogram;
+
+import com.mooreb.basic_stats.counting.Counted;
+import com.mooreb.basic_stats.counting.Counter;
 
 import java.util.ArrayList;
 import java.util.Collections;

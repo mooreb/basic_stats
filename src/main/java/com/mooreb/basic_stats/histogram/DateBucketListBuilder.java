@@ -1,4 +1,4 @@
-package com.mooreb.util;
+package com.mooreb.basic_stats.histogram;
 
 import java.util.ArrayList;
 import java.util.Collections;
