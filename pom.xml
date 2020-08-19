@@ -5,7 +5,7 @@
 
     <groupId>com.mooreb</groupId>
     <artifactId>basic_stats</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>basic_stats</name>
