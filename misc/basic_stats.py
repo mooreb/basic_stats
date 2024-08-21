@@ -1,5 +1,8 @@
+#!/usr/bin/python3
+
 import math
 import sys
+from functools import reduce
 
 def compute_median(sorted_numbers, n):
     if (1 == (n % 2)):
@@ -13,7 +16,7 @@ def compute_median(sorted_numbers, n):
     return median
 
 def standard_deviation(numbers, mean, n):
-    square_diffs = map(lambda x: (x-mean)*(x-mean), numbers)
+    square_diffs = [(x-mean)*(x-mean) for x in numbers]
     sum_of_square_diffs = reduce(lambda x, y: x+y, square_diffs)
     square_stddev = (1.0*sum_of_square_diffs)/n
     stddev = math.sqrt(square_stddev)
@@ -38,22 +41,22 @@ def basic_stats(numbers):
              }
 
 def print_stats(stats):
-    print "sum is %s" % stats['sum']
-    print "count is %s" % stats['n']
-    print "mean is %s" % stats['mean']
-    print "stddev is %s" % stats['stddev']
-    print "min is %s" % stats['min']
-    print "max is %s" % stats['max']
-    print "median is %s" % stats['median']
+    print("sum is %s" % stats['sum'])
+    print("count is %s" % stats['n'])
+    print("mean is %s" % stats['mean'])
+    print("stddev is %s" % stats['stddev'])
+    print("min is %s" % stats['min'])
+    print("max is %s" % stats['max'])
+    print("median is %s" % stats['median'])
 
 def main(argv=None):
     if argv is None:
         argv = sys.argv
 
     for filename in argv[1:]:
-        f = file(filename)
+        f = open(filename, 'r')
         number_strings = f.readlines()
-        numbers = map(float, number_strings)
+        numbers = list(map(float, number_strings))
         stats = basic_stats(numbers)
         print_stats(stats)
 
