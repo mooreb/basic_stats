@@ -1,4 +1,4 @@
-test:
-	./basic_stats.py numbers
-
-.PHONY: test
+test-output:
+	./basic_stats.py numbers > $@
+	cmp $@ expected-output
+	-rm -f $@
